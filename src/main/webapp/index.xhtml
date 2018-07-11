@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+<h:head></h:head> 
+<body> 
+  <h:form id="frmAtributo">
+      <fieldset>
+        <legend>Operacoes</legend>
+        <h:panelGrid columns="2">                
+   		   <h:outputText value="Valor1" />
+           <h:inputText id="Valor1" value="#{calculadoraMB.numero1}" required="true" />
+           <h:outputText value="Valor2" />
+           <h:inputText id="Valor2" value="#{calculadoraMB.numero2}" required="true" />                                           
+           <h:commandButton action="#{calculadoraMB.soma}" value="Somar">
+              <f:ajax execute="@this" render="Resultado"></f:ajax>              
+           </h:commandButton>               
+           <h:outputText value="Resultado" /> 
+           <h:inputText id="Resultado"/>                                                   
+        </h:panelGrid>
+      </fieldset> 
+  </h:form>
+</body> 
+</html>
